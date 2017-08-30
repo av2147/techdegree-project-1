@@ -32,30 +32,34 @@ var quotes =[
   }
 ];
 
+// gets random qoute frome the quotes variable and returns value
+
 function getRandomQuote (){
-var famousQuotes;
-famousQuotes = quotes[Math.floor(Math.random() * quotes.length)];
-  return famousQuotes;
+  var famousQuotes;
+  famousQuotes = quotes[Math.floor(Math.random() * quotes.length)];
+    return famousQuotes;
 }
+
+// prints qoute to the document
 
 function printQuote(){
   var randomQuote = getRandomQuote();
 
-var html = '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '</p>';
+  var html = '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '</p>';
 
-if (randomQuote.citation){
+  if (randomQuote.citation){
 
-  html += '<span class="citation">' + randomQuote.citation + '</span>';
-
-}
-
-if (randomQuote.year) {
-html += '<span class="year">' + randomQuote.year + '</span>';
+    html += '<span class="citation">' + randomQuote.citation + '</span>';
 
   }
 
+  if (randomQuote.year) {
+  html += '<span class="year">' + randomQuote.year + '</span>';
 
-document.getElementById('quote-box').innerHTML = "";
-document.getElementById('quote-box').innerHTML = html;
+    }
+
+
+  document.getElementById('quote-box').innerHTML = "";
+  document.getElementById('quote-box').innerHTML = html;
 
 }
